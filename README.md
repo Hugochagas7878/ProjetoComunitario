@@ -1,19 +1,24 @@
-# :checkered_flag: NOME DO PROJETO
+# :checkered_flag: Projeto afago
 
-Breve descrição do que o seu projeto faz.
+O projeto visa integrar as comunidades e seus integrantes em causas sociais, tanto conscientizando os pares sobre os problemas em sua região, como também oferecendo uma forma de ajudar. Através dessa ferramenta, buscamos tornar mais fácil para as pessoas ajudarem causas comunitárias próximas.
 
 ## :technologist: Membros da equipe
 
-Matrícula, nome e curso dos participantes.
+553635, Hugo Das Chagas Silva - CC
+552478, Francisco Leudes Bezerra Neto - CC
 
 ## :bulb: Objetivo Geral
-Descrever o objetivo de geral do projeto
+Descrever o objetivo de geral do projeto:
+
+O site tem como principal objetivo facilitar as doações de alimentos, recursos e materiais para causas beneficentes.
 
 ## :eyes: Público-Alvo
-Público-alvo do projeto
+Público-alvo do projeto:
+Pessoas de baixa e media renda, ONGs e igrejas.
 
 ## :star2: Impacto Esperado
-Descreva o impacto esperado do projeto em relação ao público alvo
+Descreva o impacto esperado do projeto em relação ao público alvo:
+Projetamos que com o site, ONGS e Igrejas possam ter um alcance maior de pessoas em suas ações beneficentes, e as pessoas sem vínculos com essas entidades ou sem recursos financeiros possam também ajudar as causas mesmo sem um contato direto.
 
 ## :people_holding_hands: Papéis ou tipos de usuário da aplicação
 

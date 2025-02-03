@@ -41,6 +41,8 @@ Usuario não logado: Doar financeiramente.
 
 Liste as principais entidades do sistema.
 
+Camapanhas, organizações, usuario e doações.
+
 
 ----
 

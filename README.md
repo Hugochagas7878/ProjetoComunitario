@@ -24,11 +24,18 @@ Projetamos que com o site, ONGS e Igrejas possam ter um alcance maior de pessoas
 
 Informe aqui os tipos de usuário que irão interagir com a aplicação. Ex: administrador, locador, locatario, usuário não logado.
 
+Super admin, admin( ONGs ), usuario e usuario não logado.
+
 > Tenha em mente que obrigatoriamente a aplicação deve possuir funcionalidades acessíveis a todos os tipos de usuário e outra funcionalidades restritas a certos tipos de usuários.
 
 ## :triangular_flag_on_post:	 Principais funcionalidades da aplicação
 
 Descreve ou liste brevemente as principais funcionalidades da aplicação que será desenvolvida. Destaque a funcionalidades que serão acessévies a todos os usuários e aquelas restriras a usuários logados.
+
+Super Admin: Poder de remover usuario e campanhas, definir admins.
+Admins: Criar campanhas, atualizar e modificar campanhas.
+Usuario logado: Doar materiais, sugerir campanhas e propor serviços.
+Usuario não logado: Doar financeiramente.
 
 ## :spiral_calendar: Entidades ou tabelas do sistema
 

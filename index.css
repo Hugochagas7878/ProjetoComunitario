@@ -1,0 +1,217 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f3f3f3;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+header {
+    background: green;
+    padding: 10px 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    width: 5%;
+}
+
+.logo img{
+    width: 50px;
+    height: 50px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li:hover {
+    background-color: darkgreen;
+}
+
+.nav-links li {
+    padding: 15px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+
+
+.nav-links a {
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn-login {
+    background: white;
+    color: #007BFF;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-login:hover {
+    background: rgb(129, 129, 129);
+    color: #003b7a;
+}
+
+
+
+.hero {
+    background: linear-gradient(to bottom, green, darkgreen);
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn-cta {
+    background: #fff;
+    color: #007BFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+    background: #fff;
+}
+
+.feature {
+    text-align: center;
+    max-width: 200px;
+}
+
+.feature h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+}
+
+.campanhas{
+    display: flex;
+    justify-content: center;
+}
+
+.cards-box{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#column{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.content{
+    margin-bottom: 50px;
+}
+
+
+
+
+
+
+
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    margin: 0 10px 30px 10px;
+
+}
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    width: 200px;
+    height: 200px;
+}
+.card h2 {
+    margin: 10px 0;
+}
+.progress-bar {
+    background: #ddd;
+    border-radius: 5px;
+    height: 10px;
+    position: relative;
+    margin: 10px 0;
+}
+.progress {
+    background: #4CAF50;
+    height: 100%;
+    border-radius: 5px;
+    width: 60%; /* Simulando 60% arrecadado */
+}
+.meta {
+    font-size: 14px;
+    color: #555;
+}
+.doar-btn {
+    display: inline-block;
+    background: #ff5722;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.doar-btn:hover {
+    background: #993111;
+}

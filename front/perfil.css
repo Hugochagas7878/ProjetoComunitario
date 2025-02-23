@@ -3,8 +3,26 @@ body {
     background-color: #eef2f3;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: top; 
     margin: 10px;
+}
+
+
+.voltar{
+    margin-top: 30px;
+}
+
+.voltar button{
+    font-size: 13px;
+    width: 90px;
+    height: auto;
+    background-color: gray; /* Cor de fundo do botão */
+    color: white;
+    border-radius: 35px;
+    cursor: pointer;
+    border: none; /* Remove borda */
+    cursor: pointer; /* Indica que é clicável */
+    padding: 7px 14px; /* Ajuste o padding conforme necessário */
 }
 .container {
     background: white;
@@ -13,6 +31,7 @@ body {
     width: 100%;
     border-radius: 12px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
 }
 .perfil-header {
     display: flex;

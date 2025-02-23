@@ -102,6 +102,7 @@ button {
 }
 
 .help-button {
+    font-size: 13px;
     width: 15%;
     background-color: #ff5722; /* Cor de fundo do botão */
     color: white;

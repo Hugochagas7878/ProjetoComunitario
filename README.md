@@ -71,7 +71,7 @@ Lista as tecnologias, frameworks e bibliotecas utilizados.
 | Entidade 2 | X |    |  X | X |
 | Entidade 3 | X |    |  |  |
 
-> Lembre-se que é necessário implementar o CRUD de pelo menos duas entidades.
+> Lembre-se que é necessário implementar o CRUD de pelo menos duas entidades..
 
 ## :neckbeard: Rotas da API REST utilizadas
 

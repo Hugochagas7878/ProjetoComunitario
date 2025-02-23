@@ -369,6 +369,116 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCampanhaCampanha extends Struct.CollectionTypeSchema {
+  collectionName: 'campanhas';
+  info: {
+    description: '';
+    displayName: 'Campanha';
+    pluralName: 'campanhas';
+    singularName: 'campanha';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    atual: Schema.Attribute.Decimal;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descricao: Schema.Attribute.Text;
+    doacoes: Schema.Attribute.Relation<'oneToMany', 'api::doacao.doacao'>;
+    imagem: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    inicio: Schema.Attribute.Date;
+    local: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::campanha.campanha'
+    > &
+      Schema.Attribute.Private;
+    nome: Schema.Attribute.String;
+    objetivo: Schema.Attribute.Decimal;
+    organizacao: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::organizacao.organizacao'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    termino: Schema.Attribute.Date;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiDoacaoDoacao extends Struct.CollectionTypeSchema {
+  collectionName: 'doacaos';
+  info: {
+    description: '';
+    displayName: 'Doacao';
+    pluralName: 'doacaos';
+    singularName: 'doacao';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    campanha: Schema.Attribute.Relation<'manyToOne', 'api::campanha.campanha'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::doacao.doacao'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    user: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    valor: Schema.Attribute.Decimal;
+  };
+}
+
+export interface ApiOrganizacaoOrganizacao extends Struct.CollectionTypeSchema {
+  collectionName: 'organizacaos';
+  info: {
+    description: '';
+    displayName: 'Organizacao';
+    pluralName: 'organizacaos';
+    singularName: 'organizacao';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    campanhas: Schema.Attribute.Relation<'oneToMany', 'api::campanha.campanha'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descricao: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::organizacao.organizacao'
+    > &
+      Schema.Attribute.Private;
+    nome: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    user: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::users-permissions.user'
+    >;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -824,7 +934,6 @@ export interface PluginUsersPermissionsUser
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
@@ -833,6 +942,7 @@ export interface PluginUsersPermissionsUser
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    doacao: Schema.Attribute.Relation<'oneToMany', 'api::doacao.doacao'>;
     email: Schema.Attribute.Email &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -844,6 +954,10 @@ export interface PluginUsersPermissionsUser
       'plugin::users-permissions.user'
     > &
       Schema.Attribute.Private;
+    organizacao: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::organizacao.organizacao'
+    >;
     password: Schema.Attribute.Password &
       Schema.Attribute.Private &
       Schema.Attribute.SetMinMaxLength<{
@@ -878,6 +992,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::campanha.campanha': ApiCampanhaCampanha;
+      'api::doacao.doacao': ApiDoacaoDoacao;
+      'api::organizacao.organizacao': ApiOrganizacaoOrganizacao;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

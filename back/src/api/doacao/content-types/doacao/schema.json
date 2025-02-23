@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "doacaos",
+  "info": {
+    "singularName": "doacao",
+    "pluralName": "doacaos",
+    "displayName": "Doacao",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "valor": {
+      "type": "decimal"
+    },
+    "campanha": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::campanha.campanha",
+      "inversedBy": "doacoes"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "doacao"
+    }
+  }
+}

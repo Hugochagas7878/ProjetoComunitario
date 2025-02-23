@@ -285,3 +285,71 @@ input, textarea, select {
     border-radius: 10px;
     margin: 0 auto;
 }
+
+
+/* Campanha */
+.container {
+    font-family: proxima-nova, sans-serif;
+    background: lightgray;
+    padding: 20px;
+    margin: auto;
+    box-shadow: 0px 0px 10px #ccc;
+    text-align: left;
+}
+
+.container h2{
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+.container p{
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+.campanha-stats {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+.campanha-stats img {
+    width: 600px;
+    height:400px;
+    margin: 0px 20px;
+    
+}
+.progresso {
+    width: 35%;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #ccc;
+}
+.barra-progresso {
+    width: 95%;
+    background: #ddd;
+    border-radius: 5px;
+    height: 10px;
+    position: relative;
+    margin: 10px 10px;
+}
+.barra {
+    background: #4CAF50;
+    height: 100%;
+    border-radius: 5px;
+    width: 50%; 
+}
+.botao-apoiar {
+    display: block;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.botao-apoiar:hover {
+    background-color: #218838;
+}

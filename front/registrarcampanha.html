@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Campanhas</title>
+    <link rel="stylesheet" href="index.css">
+   
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="logo.svg" alt=""></div>
+        <div class="menu">
+            <ul class="nav-links">
+                <a href="/"><li>Início</li></a>
+                <a href="/campanhas.html"><li>Campanhas</li></a>
+                <a href="#"><li>Organizações</li></a>
+                <a href="#"><li>Contato</li></a>
+            </ul>
+            <!-- <a href="/login" class="btn-login">Login</a> -->
+            <ul class="nav-links">
+                <a href="/login.html"><li>Login</li></a>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+    <div class = "formlinha">
+    
+        <div class="formcontent">
+            <h1>Adicionar Nova Campanha</h1>
+            <p> Aqui você conseguirá adicionar e modificar novas campanhas.</p>
+        </div>
+        
+        <div class="campanhaform">
+            <form>
+                <label for="nome">Nome da Campanha:</label>
+                <input type="text" id="nome" name="nome" required>
+                
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" required></textarea>
+                
+                <label for="dataInicio">Data de Início:</label>
+                <input type="date" id="dataInicio" name="dataInicio" required>
+                
+                <label for="dataTermino">Data de Término:</label>
+                <input type="date" id="dataTermino" name="dataTermino" required>
+                
+                <label for="local">Local:</label>
+                <input type="text" id="local" name="local" required>
+                
+                <label for="quantia">Quantidade Necessária (R$):</label>
+                <input type="number" id="quantia" name="quantia" min="1" required>
+                
+                <label for="imagem">Imagem da Campanha:</label>
+                <input type="file" id="imagem" name="imagem" accept="image/*" required>
+                
+                <label for="instituicao">Instituição:</label>
+                <select id="instituicao" name="instituicao" required>
+                    <option value="">Selecione uma instituição</option>
+                    <option value="instituicao1">Instituição 1</option>
+                    <option value="instituicao2">Instituição 2</option>
+                    <option value="instituicao3">Instituição 3</option>
+                </select>
+                
+                <button type="submit">Adicionar Campanha</button>
+                
+            </div>
+            
+    </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 MeuSite. Todos os direitos reservados.</p>
+        </footer>
+        <!--
+    -->
+</body>
+</html>
+    

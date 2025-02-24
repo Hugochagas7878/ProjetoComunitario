@@ -1,4 +1,15 @@
 const cadastro = document.getElementById('cadastro')
+const voltar = document.getElementById('voltar')
+
+voltar.addEventListener('click', ()=>{
+    const link = localStorage.getItem('redirectCadastro')
+    if(link){
+        localStorage.removeItem('redirectCadastro')
+        window.location.href = link
+    }else{
+        window.location.href = './index.html'
+    }
+})
 
 cadastro.addEventListener('submit', async (e)=>{
     e.preventDefault()
@@ -11,6 +22,20 @@ cadastro.addEventListener('submit', async (e)=>{
         email: email.value,
         password: senha.value
     }
-    const res = await createUser(user)
-    console.log(res)
+    try {
+        const res = await createUser(user)
+        localStorage.setItem('token', res.jwt)
+        const link = localStorage.getItem('redirectCadastro')
+        alert('Usuário criado com sucesso')
+        if(link){
+            localStorage.removeItem('redirectCadastro')
+            window.location.href = link
+        }else{
+            window.location.href = './index.html'
+        }
+    } catch (e) {
+        alert('Falha na criação de usuário')
+    }
+    
+    
 })

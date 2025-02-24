@@ -63,25 +63,12 @@ if(localStorage.getItem('token')){
     const listItem = document.createElement('li')
     listItem.textContent = 'Logout'
 
-    const link2 = document.createElement('a')
-    link2.setAttribute('href', './perfil.html')
-
-    const listItem2 = document.createElement('li')
-    listItem2.textContent = 'Perfil'
-
     link.appendChild(listItem)
-    link2.appendChild(listItem2)
-
     link.addEventListener('click', ()=>{
         localStorage.clear()
         window.location.reload()
     })
-    link2.addEventListener('click', ()=>{
-        localStorage.setItem('redirectPerfil', window.location.href)
-    })
-
     loginLogout.appendChild(link)
-    loginLogout.appendChild(link2)
     
 }else{
     const link = document.createElement('a')
@@ -91,19 +78,5 @@ if(localStorage.getItem('token')){
     listItem.textContent = 'Login'
 
     link.appendChild(listItem)
-    const link2 = document.createElement('a')
-    link2.setAttribute('href', './registro.html')
-
-    const listItem2 = document.createElement('li')
-    listItem2.textContent = 'Cadastrar'
-
-    link2.appendChild(listItem2)
     loginLogout.appendChild(link)
-    loginLogout.appendChild(link2)
-    link.addEventListener('click', ()=>{
-        localStorage.setItem('redirectLogin', window.location.href)
-    })
-    link2.addEventListener('click', ()=>{
-        localStorage.setItem('redirectCadastro', window.location.href)
-    })
 }

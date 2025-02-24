@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #eef2f3;
+    background-color: #15181F;
     display: flex;
     justify-content: center;
     align-items: top; 
@@ -16,7 +16,7 @@ body {
     font-size: 13px;
     width: 90px;
     height: auto;
-    background-color: gray; /* Cor de fundo do botão */
+    background-color: #ff5722; /* Cor de fundo do botão */
     color: white;
     border-radius: 35px;
     cursor: pointer;

@@ -3,7 +3,7 @@ const loginLogout = document.getElementById('login-logout')
 
 async function mostarCampanhas() {
     const res = await getAllCampanhas()
-    console.log(res)
+
     for(camp of res.data){
         const card = document.createElement('div');
         card.className = 'card';
@@ -39,7 +39,7 @@ async function mostarCampanhas() {
         meta.textContent = `R$ ${camp.atual} de R$ ${camp.objetivo} arrecadados`;
 
         const botaoDoar = document.createElement('a');
-        botaoDoar.href = `espiar.html?id=${camp.documentId}`;
+        botaoDoar.href = '#';
         botaoDoar.className = 'doar-btn';
         botaoDoar.textContent = 'Doar Agora';
 

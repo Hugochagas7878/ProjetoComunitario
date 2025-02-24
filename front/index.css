@@ -325,10 +325,6 @@ input, textarea, select {
     border-radius: 10px;
     box-shadow: 0px 0px 5px #ccc;
 }
-.progresso h3{
-    text-align: center;
-    font-size: 25px;
-}
 .barra-progresso {
     width: 95%;
     background: #ddd;

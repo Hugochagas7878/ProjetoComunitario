@@ -4,7 +4,7 @@ async function getAllCampanhas(){
 }
 
 async function getByIdCampanha(id){
-    const res = await api.get(`/campanhas/${id}?populate=doacoes&populate=organizacao`)
+    const res = await api.get(`/campanhas/${id}`)
     return res.data
 }
 

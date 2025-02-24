@@ -34,7 +34,7 @@ Descreve ou liste brevemente as principais funcionalidades da aplicação que se
 
 Super Admin: Poder de remover usuario e campanhas, definir admins.
 Admins: Criar campanhas, atualizar e modificar campanhas.
-Usuario logado: Doar materiais, sugerir campanhas e propor serviços.
+Usuario logado: Doar materiais, sugerir campanhas e propor serviços..
 Usuario não logado: Doar financeiramente.
 
 ## :spiral_calendar: Entidades ou tabelas do sistema

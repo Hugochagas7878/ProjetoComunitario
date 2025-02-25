@@ -3,6 +3,15 @@ const addCamp = document.getElementById('addCamp')
 
 loginLogout()
 
+async function checkRole() {
+    const user = await getOneUser(localStorage.getItem('id'))
+    if(user.data.role.name != 'Admin'){
+        window.location.href = './'
+    }
+    console.log()
+}
+checkRole()
+
 async function listOrg(){
     const res = await getAllOrganizacoes()
     for(org of res.data){
@@ -13,7 +22,7 @@ async function listOrg(){
     }
 }
 
-addCamp.addEventListener('click', async (e)=>{
+addCamp.addEventListener('submit', async (e)=>{
     e.preventDefault()
     const nome = document.getElementById("nome").value;
     const descricao = document.getElementById("descricao").value;
@@ -34,16 +43,28 @@ addCamp.addEventListener('click', async (e)=>{
         imagem: imagem,
         organizacao: instituicao
     };
+    let res
     try {
-        const res = await createCampanha(campanha) 
-        alert('Campanha criada com sucesso')
+        res = await createCampanha(campanha) 
+        let res2
+        if(imagem){
+            res2 = await sendImagem(imagem)
+        }
+
+        const camp2 = {
+            documentId: res.data.documentId,
+            imagem: res2[0].id
+        }
+        
+        const res3 = await updateImageCampanha(camp2)
+    
+        window.location.href = './campanhas.html'
     } catch (e) {
         alert('Erro na criação da campanha')
     }
     
-    // const res2 = await sendImagem(imagem)
-    // const res3 = await updateImageCampanha(campanha)
-    window.location.href = './campanhas.html'
+     
+    
 })
 
 listOrg()

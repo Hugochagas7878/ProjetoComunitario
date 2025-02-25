@@ -3,12 +3,17 @@ async function getAllUsers() {
     return res.data
 }
 
-async function getOneUser(user) {
+async function loginUser(user) {
     const res = await api.post('auth/local', {
         identifier: user.email,
         password: user.password
     })
     return res.data
+}
+
+async function getOneUser(id) {
+    const res = await api.get(`/users/${id}?populate=*`)
+    return res
 }
 
 async function createUser(user) {

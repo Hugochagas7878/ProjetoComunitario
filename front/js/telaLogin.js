@@ -1,13 +1,17 @@
 const login = document.getElementById('login')
 const voltar = document.getElementById('voltar')
 
+if(localStorage.getItem('token')){
+    window.location.href = './'
+}
+
 voltar.addEventListener('click', ()=>{
     const link = localStorage.getItem('redirectLogin')
     if(link){
         localStorage.removeItem('redirectLogin')
         window.location.href = link
     }else{
-        window.location.href = './index.html'
+        window.location.href = './'
     }
 })
 
@@ -21,7 +25,7 @@ login.addEventListener('submit', async (e)=>{
         password: senha.value
     }
     try{
-        const res = await getOneUser(user)
+        const res = await loginUser(user)
         localStorage.setItem('token', res.jwt)
         localStorage.setItem('id', res.user.id)
         window.location.href = './index.html'

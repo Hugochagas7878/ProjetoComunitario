@@ -10,8 +10,9 @@ async function mostarCampanhas() {
 
         const img = document.createElement('img');
         img.className = 'img-camp';
-        img.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeewWxj7fbksIQdSLiNu6YXwsFIlPQcRvfKw&s';
+        img.src = (camp.imagem)? 'http://127.0.0.1:1337' + camp.imagem.url : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeewWxj7fbksIQdSLiNu6YXwsFIlPQcRvfKw&s' 
         img.alt = 'Imagem da Campanha';
+        
 
         const titulo = document.createElement('h2');
         titulo.textContent = camp.nome;

@@ -11,56 +11,23 @@
         <button id="voltar">Voltar</button>
     </div>
 
-    <div class="container">
-        <div class="perfil-header">
-            <img src="https://as2.ftcdn.net/jpg/03/49/49/79/1000_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.jpg" alt="Foto de Perfil">
-            <div>
-                <h2>Nome do Usuário</h2>
-                <p>Email: usuario@email.com</p>
-            </div>
-        </div>
+    <div class="container" id="container">
         
-        <div class="info">
-            <h3>Informações</h3>
-            <p><strong>Data de Cadastro:</strong> 01/01/2024</p>
-            <p><strong>Total de Doações:</strong> R$ 500,00</p>
-        </div>
-        
-        <div class="configuracoes">
-            <h3>Configurações da Conta</h3>
-            <p><a href="#">Alterar Senha</a></p>
-            <p><a href="#">Editar Perfil</a></p>
-            <p><a href="#">Preferências de Notificação</a></p>
-        </div>
-        
-        <div class="historico">
-            <h3>Histórico de Doações</h3>
-            <ul>
-                <li>Doação para Campanha X - R$ 100,00 (10/02/2025)</li>
-                <li>Doação para Campanha Y - R$ 200,00 (15/02/2025)</li>
-                <li>Doação para Campanha Z - R$ 150,00 (20/02/2025)</li>
-            </ul>
-        </div>
-        
-        <div class="criadas">
-            <h3>Campanhas Criadas</h3>
-            <ul>
-                <li>Minha Campanha 1 - R$ 5.000 arrecadados</li>
-                <li>Minha Campanha 2 - R$ 10.000 arrecadados</li>
-            </ul>
-        </div>
-        
-        <div class="campanhas">
-            <h3>Campanhas Apoiadas</h3>
-            <ul>
-                <li>Campanha 1 - R$ 50,00</li>
-                <li>Campanha 2 - R$ 100,00</li>
-                <li>Campanha 3 - R$ 350,00</li>
-            </ul>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close">&times;</span>
+            
+            <form>
+                <p>Valor da doação:</p>
+                <input type="number" name="doacao" id="doacao">
+                <a class="botao-apoiar" id="doacaoButton">Doar</a>
+            </form>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/axios.js"></script>
+    <script src="js/doacoes.js"></script>
     <script src="js/campanhas.js"></script>
     <script src="js/users.js"></script>
     <script src="js/telaPerfil.js"></script>

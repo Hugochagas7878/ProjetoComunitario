@@ -1,6 +1,10 @@
 const cadastro = document.getElementById('cadastro')
 const voltar = document.getElementById('voltar')
 
+if(localStorage.getItem('token')){
+    window.location.href = './'
+}
+
 voltar.addEventListener('click', ()=>{
     const link = localStorage.getItem('redirectCadastro')
     if(link){

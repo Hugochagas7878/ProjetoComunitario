@@ -1,5 +1,5 @@
 async function getAllCampanhas(){
-    const res = await api.get('/campanhas')
+    const res = await api.get('/campanhas?populate=imagem')
     return res.data
 }
 
@@ -28,7 +28,7 @@ async function createCampanha(campanha){
             local: campanha.local,
             objetivo: campanha.objetivo,
             atual: 0,
-            organizacao: campanha.organizacao
+            organizacao: campanha.organizacao || undefined
         }
     })
     return res.data

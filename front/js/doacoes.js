@@ -8,3 +8,8 @@ async function createDoacao(doacao){
     })
     return res.data
 }
+
+async function getOneDoacao(id){
+    const res = await api.get(`/doacaos/${id}?populate=campanha`)
+    return res.data
+}

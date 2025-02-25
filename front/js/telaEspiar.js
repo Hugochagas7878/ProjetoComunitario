@@ -61,7 +61,7 @@ async function mostrarCampanha() {
     campanhaStats.className = 'campanha-stats';
 
     const img = document.createElement('img');
-    img.src = 'https://www.galaxcms.com.br/imgs_crud_comum/877/Vulnerabilidadedecriancasnotrabalho-20140603204922.jpg';
+    img.src = (data.imagem )? 'http://127.0.0.1:1337'+ data.imagem.url: 'https://www.galaxcms.com.br/imgs_crud_comum/877/Vulnerabilidadedecriancasnotrabalho-20140603204922.jpg';
     img.alt = 'imagem.jpg';
 
     const progresso = document.createElement('div');
@@ -71,7 +71,7 @@ async function mostrarCampanha() {
     valorArrecadado.textContent = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(data.atual);;
 
     const apoiadores = document.createElement('p');
-    apoiadores.innerHTML = `apoiados por <strong>${data.doacoes.length} pessoas</strong>`;
+    apoiadores.innerHTML = `Número de doações: <strong>${data.doacoes.length}</strong>`;
 
     const barraProgresso = document.createElement('div');
     barraProgresso.className = 'barra-progresso';
@@ -115,7 +115,6 @@ async function mostrarCampanha() {
     termino = new Intl.DateTimeFormat('pt-BR').format(termino)
     prazo.innerHTML = `Você pode apoiar este projeto até o dia <strong>${termino}</strong> às 23h59.`;
 
-    // Construindo a hierarquia
     barraProgresso.appendChild(barra);
     progresso.appendChild(valorArrecadado);
     progresso.appendChild(apoiadores);
@@ -145,7 +144,7 @@ async function mostrarCampanha() {
             modal.style.display = "none";
         }
     })
-
+    loginLogout.innerHTML = ''
     if(localStorage.getItem('token')){
         const link = document.createElement('a')
 

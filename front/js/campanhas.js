@@ -53,6 +53,10 @@ async function updateImageCampanha(campanha){
 }
 
 async function eraseCampanha(campanha){
-    const res = await api.delete(`/campanhas/${id}`)
+    const res = await api.delete(`/campanhas/${campanha.documentId}`, {
+        headers:{
+            Authorization: `Bearer ${localStorage.getItem('token')}`
+        }
+    })
     return res.data
 }

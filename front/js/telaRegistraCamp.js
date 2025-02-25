@@ -10,6 +10,9 @@ async function checkRole() {
     }
     console.log()
 }
+if(!localStorage.getItem('token')){
+    window.location.href = './login.html'
+}
 checkRole()
 
 async function listOrg(){

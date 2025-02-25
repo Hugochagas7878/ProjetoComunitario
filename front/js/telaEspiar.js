@@ -115,6 +115,28 @@ async function mostrarCampanha() {
     termino = new Intl.DateTimeFormat('pt-BR').format(termino)
     prazo.innerHTML = `Você pode apoiar este projeto até o dia <strong>${termino}</strong> às 23h59.`;
 
+    const botaoDeletar = document.createElement('a');
+    botaoDeletar.className = 'botao-deletar';
+    botaoDeletar.textContent = 'Deletar campanha';
+    const user = await getOneUser(localStorage.getItem('id'))
+    if(!user.data ||user.data.role.name != 'Admin'){
+        botaoDeletar.style.display = 'none'
+    }
+
+    botaoDeletar.addEventListener('click', async (e)=>{
+        e.preventDefault()
+        let confirmAction = confirm("Você tem certeza?");
+        if (confirmAction) {
+            try {
+                await eraseCampanha({documentId: data.documentId})
+                alert("Campanha deletada com sucesso!");
+                window.location.href = './campanhas.html'
+            } catch (error) {
+                alert("Erro ao deletar campanha");
+            }
+        }
+    })
+
     barraProgresso.appendChild(barra);
     progresso.appendChild(valorArrecadado);
     progresso.appendChild(apoiadores);
@@ -122,6 +144,7 @@ async function mostrarCampanha() {
     progresso.appendChild(meta);
     progresso.appendChild(diasRestantes);
     progresso.appendChild(botaoApoiar);
+    progresso.appendChild(botaoDeletar);
     progresso.appendChild(prazo);
 
     campanhaStats.appendChild(img);

@@ -26,6 +26,7 @@ body {
 .logo {
     width: 150px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 h1 {
     color: #0056b3;

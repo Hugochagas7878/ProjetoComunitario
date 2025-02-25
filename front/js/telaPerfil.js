@@ -10,6 +10,10 @@ voltar.addEventListener('click', ()=>{
     }
 })
 
+if(!localStorage.getItem('token')){
+    window.location.href = './login.html'
+}
+
 async function mostrarUser() {
     const user = await getOneUser(localStorage.getItem('id'))
     const container = document.getElementById('container');
@@ -65,14 +69,51 @@ async function mostrarUser() {
 
     
     const alterarPerfil = document.createElement('a');
+    const modal = document.getElementById('myModal')
     alterarPerfil.href = ''
     alterarPerfil.innerHTML = 'Editar perfil<br><br>';
+    const nomeUser = document.getElementById('nomeUser')
+    alterarPerfil.addEventListener('click', (e)=>{
+        e.preventDefault()
+        modal.style.display = 'block'
+        nomeUser.value = user.data.username
+
+    })
+    const close = document.getElementById('close')
+    close.addEventListener('click', ()=>{
+        modal.style.display = 'none'
+    })
+    const enviar = document.getElementById('enviarButton')
+    enviar.addEventListener('click', async (e)=>{
+        e.preventDefault()
+        try {
+            const res = await updateUser({documentId: user.data.id, name: nomeUser.value})
+            alert('Perfil atualizado com sucesso!')
+            window.location.reload()
+        } catch (error) {
+            alert('Erro ao atualizar perfil')
+            modal.style.display = 'none'
+        }
+        
+    })
 
     const deletarConta = document.createElement('a');
     deletarConta.href = ''
     deletarConta.innerHTML = 'Deletar conta';
     
-
+    deletarConta.addEventListener('click', async (e)=>{
+        e.preventDefault()
+        let confirmAction = confirm("Você tem certeza?");
+    
+        if (confirmAction) {
+            try {
+                await eraseUser({documentId: user.data.id})
+            } catch (error) {
+                alert("Erro ao deletar usuário");
+            }
+            
+        } 
+    })
 
     configuracoes.appendChild(configTitulo);
     configuracoes.appendChild(alterarPerfil);
@@ -106,7 +147,6 @@ async function mostrarUser() {
     container.appendChild(configuracoes);
     container.appendChild(historico);
     
-    container.appendChild(campanhas);
 }
 
 mostrarUser()

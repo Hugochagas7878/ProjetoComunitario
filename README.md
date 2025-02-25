@@ -67,9 +67,10 @@ Lista as tecnologias, frameworks e bibliotecas utilizados.
 
 | Entidade| Criação | Leitura | Atualização | Remoção |
 | --- | --- | --- | --- | --- |
-| Entidade 1 | X |  X  |  | X |
-| Entidade 2 | X |    |  X | X |
-| Entidade 3 | X |    |  |  |
+| Usuário | X |  X  | X | X |
+| Campanhas | X |  X  |  X | X |
+| Organizações |   |  X  |  |  |
+| Doações | X |  X  |  |  |
 
 > Lembre-se que é necessário implementar o CRUD de pelo menos duas entidades..
 
@@ -77,5 +78,15 @@ Lista as tecnologias, frameworks e bibliotecas utilizados.
 
 | Método HTTP | URL |
 | --- | --- |
-| GET | api/entidade1/|
-| POST | api/entidade2 |
+| GET | api/campanhas|
+| POST | api/campanhas |
+| PUT | api/campanhas/id|
+| DELETE | api/campanhas/id|
+| GET | api/users|
+| POST | api/auth/local|
+| POST | api/auth/local/register|
+| PUT | api/users/id|
+| DELETE | api/users/id|
+| GET | api/organizacaos|
+| GET | api/doacaos/id|
+| POST | api/doacaos|

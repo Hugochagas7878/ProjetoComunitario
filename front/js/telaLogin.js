@@ -1,4 +1,15 @@
 const login = document.getElementById('login')
+const voltar = document.getElementById('voltar')
+
+voltar.addEventListener('click', ()=>{
+    const link = localStorage.getItem('redirectLogin')
+    if(link){
+        localStorage.removeItem('redirectLogin')
+        window.location.href = link
+    }else{
+        window.location.href = './index.html'
+    }
+})
 
 login.addEventListener('submit', async (e)=>{
     e.preventDefault()
@@ -12,11 +23,20 @@ login.addEventListener('submit', async (e)=>{
     try{
         const res = await getOneUser(user)
         localStorage.setItem('token', res.jwt)
+        localStorage.setItem('id', res.user.id)
         window.location.href = './index.html'
+        const link = localStorage.getItem('redirectLogin')
+        if(link){
+            localStorage.removeItem('redirectLogin')
+            window.location.href = link
+        }else{
+            window.location.href = './index.html'
+        }
+        
         console.log(res.jwt)
     }catch(a){
         alert("Usuário ou senha incorretos")
         senha.value = ''
     }
-    
+
 })

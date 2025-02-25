@@ -1,5 +1,5 @@
 const cards = document.getElementById('cards')
-const loginLogout = document.getElementById('login-logout')
+const loginL = document.getElementById('login-logout')
 
 async function mostarCampanhas() {
     const res = await getAllCampanhas()
@@ -30,9 +30,9 @@ async function mostarCampanhas() {
         }else{
             progress.style.width = `${camp.atual/camp.objetivo*100}%`
         }
-        
+
         progressBar.appendChild(progress);
-        
+
 
         const meta = document.createElement('p');
         meta.className = 'meta';
@@ -54,29 +54,58 @@ async function mostarCampanhas() {
     }
 }
 
-mostarCampanhas()
 
-if(localStorage.getItem('token')){
-    const link = document.createElement('a')
+
+function loginLogout(){
+    if(localStorage.getItem('token')){
+        const link = document.createElement('a')
     
-
-    const listItem = document.createElement('li')
-    listItem.textContent = 'Logout'
-
-    link.appendChild(listItem)
-    link.addEventListener('click', ()=>{
-        localStorage.clear()
-        window.location.reload()
-    })
-    loginLogout.appendChild(link)
     
-}else{
-    const link = document.createElement('a')
-    link.setAttribute('href', './login.html')
-
-    const listItem = document.createElement('li')
-    listItem.textContent = 'Login'
-
-    link.appendChild(listItem)
-    loginLogout.appendChild(link)
+        const listItem = document.createElement('li')
+        listItem.textContent = 'Logout'
+    
+        const link2 = document.createElement('a')
+        link2.setAttribute('href', './perfil.html')
+    
+        const listItem2 = document.createElement('li')
+        listItem2.textContent = 'Perfil'
+    
+        link.appendChild(listItem)
+        link2.appendChild(listItem2)
+    
+        link.addEventListener('click', ()=>{
+            localStorage.clear()
+            window.location.reload()
+        })
+        link2.addEventListener('click', ()=>{
+            localStorage.setItem('redirectPerfil', window.location.href)
+        })
+    
+        loginL.appendChild(link)
+        loginL.appendChild(link2)
+    
+    }else{
+        const link = document.createElement('a')
+        link.setAttribute('href', './login.html')
+    
+        const listItem = document.createElement('li')
+        listItem.textContent = 'Login'
+    
+        link.appendChild(listItem)
+        const link2 = document.createElement('a')
+        link2.setAttribute('href', './registro.html')
+    
+        const listItem2 = document.createElement('li')
+        listItem2.textContent = 'Cadastrar'
+    
+        link2.appendChild(listItem2)
+        loginL.appendChild(link)
+        loginL.appendChild(link2)
+        link.addEventListener('click', ()=>{
+            localStorage.setItem('redirectLogin', window.location.href)
+        })
+        link2.addEventListener('click', ()=>{
+            localStorage.setItem('redirectCadastro', window.location.href)
+        })
+    }
 }

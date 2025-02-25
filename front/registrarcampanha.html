@@ -19,8 +19,8 @@
                 <a href="./sobrenos.html"><li>Sobre nós</li></a>
             </ul>
             <!-- <a href="/login" class="btn-login">Login</a> -->
-            <ul class="nav-links">
-                <a href="/login.html"><li>Login</li></a>
+            <ul class="nav-links" id="login-logout">
+                
             </ul>
         </div>
     </header>
@@ -30,7 +30,7 @@
     
         <div class="formcontent">
             <h1>Adicionar Nova Campanha</h1>
-            <p> Aqui você conseguirá adicionar e modificar novas campanhas.</p>
+            <p> Aqui você conseguirá adicionar novas campanhas.</p>
         </div>
         
         <div class="campanhaform">
@@ -58,13 +58,10 @@
                 
                 <label for="instituicao">Instituição:</label>
                 <select id="instituicao" name="instituicao" required>
-                    <option value="">Selecione uma instituição</option>
-                    <option value="instituicao1">Instituição 1</option>
-                    <option value="instituicao2">Instituição 2</option>
-                    <option value="instituicao3">Instituição 3</option>
+                    <option value="">Nenhuma</option>
                 </select>
                 
-                <button type="submit">Adicionar Campanha</button>
+                <button class="botao-apoiar" id="addCamp" type="submit">Adicionar Campanha</button>
                 
             </div>
             
@@ -76,6 +73,13 @@
         </footer>
         <!--
     -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/axios.js"></script>
+    <script src="js/campanhas.js"></script>
+    <script src="js/users.js"></script>
+    <script src="js/organizacoes.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/telaRegistraCamp.js"></script>
 </body>
 </html>
     
